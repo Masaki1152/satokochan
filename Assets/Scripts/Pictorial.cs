@@ -13,7 +13,6 @@ public class Pictorial : MonoBehaviour
     Sprite[] pictImage = new Sprite[162];
     Button[]obj = new Button[162];
     Image btnImage;
-    //Button btn;  //プレハブのボタン
     public GameObject detail;  //詳細画面のプレハブ
     GameObject detailHold;
     public Transform parentTran;
@@ -36,6 +35,7 @@ public class Pictorial : MonoBehaviour
             obj[i] = Instantiate(button, contentRectTransform);
             int s = i + 1;
             obj[i].GetComponentInChildren<Text>().text = "No." + s.ToString();
+
             obj[i].GetComponent<Button>().interactable = false;  //未所持のキャラはボタンを押せなくする
             btnImage = obj[i].gameObject.GetComponent<Image>();
             ChangeImage(i);    //写真を変える
@@ -70,19 +70,20 @@ public class Pictorial : MonoBehaviour
         eventSystem = EventSystem.current;  //イベントシステムを利用してどのボタンを押しているかを取得  
         selectedObj = eventSystem.currentSelectedGameObject;
         // ボタンのImageコンポーネントからspriteデータの名前を取得
+
         string index = selectedObj.GetComponent<Image>().sprite.name;
 
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
         detailHold.transform.SetParent(parentTran);
         detailHold.transform.localScale = new Vector3(1.2f, 1.2f, 1);
-        detailHold.transform.position = new Vector3(82, 170, 0);
+        detailHold.transform.position = new Vector3(200, 400, 0);
+
 
         //ボタンを押している最中は他のボタンは押せない
         for(int i = 0; i<162;i++)
         {
             obj[i].GetComponent<Button>().interactable = false;
         }
-
 
         //子オブジェクトの取得
         GameObject objname = detailHold.transform.GetChild(2).gameObject;
@@ -139,6 +140,7 @@ public class Pictorial : MonoBehaviour
         }
         return star;
     }
+
 
     //プレハブの戻るボタンが押されたとき
     public void PrefabOnClick()
