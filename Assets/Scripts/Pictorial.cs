@@ -13,12 +13,12 @@ public class Pictorial : MonoBehaviour
     Sprite[] pictImage = new Sprite[162];
     Button[]obj = new Button[162];
     Image btnImage;
-    //Button btn;  //ƒvƒŒƒnƒu‚Ìƒ{ƒ^ƒ“
-    public GameObject detail;  //Ú×‰æ–Ê‚ÌƒvƒŒƒnƒu
+    //Button btn;  //?v???n?u???{?^??
+    public GameObject detail;  //???????????v???n?u
     GameObject detailHold;
     public Transform parentTran;
     EventSystem eventSystem;
-    GameObject selectedObj;  //¡‘I‘ð‚µ‚Ä‚¢‚éƒ{ƒ^ƒ“‚ÌƒCƒ“ƒfƒbƒNƒX‚ðŽæ‚èo‚·
+    GameObject selectedObj;  //???I???????????{?^?????C???f?b?N?X???????o??
 
 
     private void Start()
@@ -36,55 +36,55 @@ public class Pictorial : MonoBehaviour
             obj[i] = Instantiate(button, contentRectTransform);
             int s = i + 1;
             obj[i].GetComponentInChildren<Text>().text = "No." + s.ToString();
-            obj[i].GetComponent<Button>().interactable = false;  //–¢ŠŽ‚ÌƒLƒƒƒ‰‚Íƒ{ƒ^ƒ“‚ð‰Ÿ‚¹‚È‚­‚·‚é
+            obj[i].GetComponent<Button>().interactable = false;  //?????????L???????{?^????????????????
             btnImage = obj[i].gameObject.GetComponent<Image>();
-            ChangeImage(i);    //ŽÊ^‚ð•Ï‚¦‚é
+            ChangeImage(i);    //???^????????
             Button btn = obj[i].GetComponent<Button>();
             btn.onClick.AddListener(OnClickButton);
-            Debug.Log("Pictrial‚ÌChangeImage‚ÌŒã‚ÍA”z—ñ" + i + "‚Í" + PlayerPrefs.GetString("pictInfo" + i));
+            Debug.Log("Pictrial??ChangeImage???????A?z??" + i + "??" + PlayerPrefs.GetString("pictInfo" + i));
         }
 
     }
 
     public void ChangeImage(int i)
     {
-        //PlayerPrefs‚©‚çtrue/flase‚ðŽæ‚èo‚·
+        //PlayerPrefs????true/flase???????o??
         string s = PlayerPrefs.GetString("pictInfo" + i);
-        Debug.Log("Pictrial‚ÌChangeImage’†‚Í”z—ñ" + i + "‚Í" + s);
+        Debug.Log("Pictrial??ChangeImage?????z??" + i + "??" + s);
 
-        //ŠŽ‚µ‚Ä‚¢‚½ê‡A‰æ‘œ‚ð•ÏX‚·‚é
-        if (s == "true")      //Šù‚ÉŠŽ‚µ‚Ä‚¢‚½ê‡‚Ìˆ—
+        //?????????????????A?????????X????
+        if (s == "true")      //??????????????????????????
         {
             Debug.Log(i + "is OK!," + ButtonFortune.pictInfo[i] + pictImage[i].name);
             btnImage.sprite = pictImage[i];
-            obj[i].GetComponent<Button>().interactable = true;  //–¢ŠŽ‚ÌƒLƒƒƒ‰‚Íƒ{ƒ^ƒ“‚ð‰Ÿ‚¹‚é‚æ‚¤‚É‚·‚é
+            obj[i].GetComponent<Button>().interactable = true;  //?????????L???????{?^????????????????????
         }
 
-        PlayerPrefs.SetString("pictInfo" + i, s);  //“¯Žž‚É•Û‘¶“à—e‚ðXV
+        PlayerPrefs.SetString("pictInfo" + i, s);  //?????????????e???X?V
         PlayerPrefs.Save();
     }
 
-    //ƒvƒŒƒnƒu‚Ìƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—
+    //?v???n?u???{?^??????????????????????
     public void OnClickButton()
     {
-        eventSystem = EventSystem.current;  //ƒCƒxƒ“ƒgƒVƒXƒeƒ€‚ð—˜—p‚µ‚Ä‚Ç‚Ìƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ä‚¢‚é‚©‚ðŽæ“¾  
+        eventSystem = EventSystem.current;  //?C?x???g?V?X?e???????p?????????{?^??????????????????????  
         selectedObj = eventSystem.currentSelectedGameObject;
-        // ƒ{ƒ^ƒ“‚ÌImageƒRƒ“ƒ|[ƒlƒ“ƒg‚©‚çspriteƒf[ƒ^‚Ì–¼‘O‚ðŽæ“¾
+        // ?{?^????Image?R???|?[?l???g????sprite?f?[?^?????O??????
         string index = selectedObj.GetComponent<Image>().sprite.name;
 
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
         detailHold.transform.SetParent(parentTran);
         detailHold.transform.localScale = new Vector3(1.2f, 1.2f, 1);
-        detailHold.transform.position = new Vector3(82, 170, 0);
+        detailHold.transform.position = new Vector3(200, 400, 0);
 
-        //ƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ä‚¢‚éÅ’†‚Í‘¼‚Ìƒ{ƒ^ƒ“‚Í‰Ÿ‚¹‚È‚¢
+        //?{?^?????????????????????????{?^????????????
         for(int i = 0; i<162;i++)
         {
             obj[i].GetComponent<Button>().interactable = false;
         }
 
 
-        //ŽqƒIƒuƒWƒFƒNƒg‚ÌŽæ“¾
+        //?q?I?u?W?F?N?g??????
         GameObject objname = detailHold.transform.GetChild(2).gameObject;
         GameObject objstar = detailHold.transform.GetChild(1).gameObject;
         GameObject objcomment = detailHold.transform.GetChild(3).gameObject;
@@ -104,47 +104,47 @@ public class Pictorial : MonoBehaviour
         objimage.GetComponent<Image>().sprite = pictImage[s];
     }
 
-    //Ú×‰æ–Ê‚ÉƒLƒƒƒ‰ƒNƒ^[î•ñ‚ð“`‚¦‚é
+    //???????????L?????N?^?[???????`????
     public void ConveyInfo(int i, out string name, out string star, out string comment)
     {
         string line = ButtonFortune.character[i];
         string[] lineinfo = line.Split(',');
         name = lineinfo[1];
-        int s = int.Parse(lineinfo[0]);  //¯‚Ì”‚ð®”‰»
+        int s = int.Parse(lineinfo[0]);  //??????????????
         star = starStar(s);
         comment = lineinfo[2];
     }
 
-    //™‚ð•\Ž¦‚·‚é‚½‚ß‚Ìƒƒ\ƒbƒh
+    //?????\???????????????\?b?h
     public string starStar(int num)
     {
         string star = null;
         switch (num)
         {
             case 1:
-                star = "š™™™™";
+                star = "â˜…";
                 break;
             case 2:
-                star = "šš™™™";
+                star = "â˜…â˜…";
                 break;
             case 3:
-                star = "ššš™™";
+                star = "â˜…â˜…â˜…";
                 break;
             case 4:
-                star = "šššš™";
+                star = "â˜…â˜…â˜…â˜…";
                 break;
             case 5:
-                star = "ššššš";
+                star = "â˜…â˜…â˜…â˜…â˜…";
                 break;
         }
         return star;
     }
 
-    //ƒvƒŒƒnƒu‚Ì–ß‚éƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    //?v???n?u???????{?^????????????????
     public void PrefabOnClick()
     {
         Destroy(detailHold);
-        //Ú×‰æ–Ê‚ðÁ‚µ‚½Œã‚Í‘¼‚Ìƒ{ƒ^ƒ“‚ð‰Ÿ‚¹‚é
+        //?????????????????????????{?^??????????
         for (int i = 0; i < 162; i++)
         {
             if (PlayerPrefs.GetString("pictInfo" + i) == "true")

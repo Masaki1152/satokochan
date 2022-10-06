@@ -25,11 +25,11 @@ public class DayCounter : MonoBehaviour
     {
         Today = DateTime.Now;
 
-        //ŠJŽn“ú‚ÌŽæ“¾
+        //?J?n????????
         string datetimeString = PlayerPrefs.GetString("StartDay");
         startDay = System.DateTime.FromBinary(System.Convert.ToInt64(datetimeString));
 
         dayCount = (Today - startDay).Days;
-        day.text = dayCount + 1 + "“ú–Ú";
+        day.text = dayCount + 1 + "æ—¥ç›®";
     }
 }
