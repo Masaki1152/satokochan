@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,24 +11,24 @@ public class WorkRefer : MonoBehaviour
     public Button workbutton;
     Image btnImage;
     Button obj;
-    public GameObject detail;  //Ú×‰æ–Ê‚ÌƒvƒŒƒnƒu
+    public GameObject detail;  //è©³ç´°ç”»é¢ã®ãƒ—ãƒ¬ãƒãƒ–
     GameObject detailHold;
     public Transform parentTran;
     EventSystem eventSystem;
-    GameObject selectedObj;  //¡‘I‘ğ‚µ‚Ä‚¢‚éƒ{ƒ^ƒ“‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ‚èo‚·
-    string index; //‰½”Ô–Ú‚Ìƒ{ƒ^ƒ“‚©
-    GameObject objpict; //‰æ‘œæ“¾—p
+    GameObject selectedObj;  //ä»Šé¸æŠã—ã¦ã„ã‚‹ãƒœã‚¿ãƒ³ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–ã‚Šå‡ºã™
+    string index; //ä½•ç•ªç›®ã®ãƒœã‚¿ãƒ³ã‹
+    GameObject objpict; //ç”»åƒå–å¾—ç”¨
     Sprite wwsp;
 
     private void Start()
     {
-        //ì•i”‚Ì”‚¾‚¯ƒ{ƒ^ƒ“‚ğ¶¬
+        //ä½œå“æ•°ã®æ•°ã ã‘ãƒœã‚¿ãƒ³ã‚’ç”Ÿæˆ
         for (int i = 0; i < ButtonMission.WorkStr.Count; i++)
         {
-            obj = Instantiate(workbutton, contentRectTransform);  //ƒIƒuƒWƒFƒNƒg‚Ì¶¬
+            obj = Instantiate(workbutton, contentRectTransform);  //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
             btnImage = obj.gameObject.GetComponent<Image>();
-            //btnImage.sprite =   //ƒ‰ƒCƒuƒ‰ƒŠ‚©‚ç‰æ‘œ‚ğæ“¾‚µİ’è
-            //ƒŠƒXƒg‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ“¾‚·‚é‚½‚ß‚Éspriteƒf[ƒ^‚Ì–¼‘O‚É”š‚ğŠ„‚è“–‚Ä‚é
+            //btnImage.sprite =   //ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‹ã‚‰ç”»åƒã‚’å–å¾—ã—è¨­å®š
+            //ãƒªã‚¹ãƒˆã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—ã™ã‚‹ãŸã‚ã«spriteãƒ‡ãƒ¼ã‚¿ã®åå‰ã«æ•°å­—ã‚’å‰²ã‚Šå½“ã¦ã‚‹
             btnImage.sprite.name = i.ToString();   
             Button btn = obj.GetComponent<Button>();
             btn.onClick.AddListener(OnClickButton);
@@ -37,9 +37,9 @@ public class WorkRefer : MonoBehaviour
 
     public void OnClickButton()
     {
-        eventSystem = EventSystem.current;  //ƒCƒxƒ“ƒgƒVƒXƒeƒ€‚ğ—˜—p‚µ‚Ä‚Ç‚Ìƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ä‚¢‚é‚©‚ğæ“¾  
+        eventSystem = EventSystem.current;  //ã‚¤ãƒ™ãƒ³ãƒˆã‚·ã‚¹ãƒ†ãƒ ã‚’åˆ©ç”¨ã—ã¦ã©ã®ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ã¦ã„ã‚‹ã‹ã‚’å–å¾—  
         selectedObj = eventSystem.currentSelectedGameObject;
-        // ƒ{ƒ^ƒ“‚ÌImageƒRƒ“ƒ|[ƒlƒ“ƒg‚©‚çspriteƒf[ƒ^‚Ì–¼‘O‚ğæ“¾
+        // ãƒœã‚¿ãƒ³ã®Imageã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‹ã‚‰spriteãƒ‡ãƒ¼ã‚¿ã®åå‰ã‚’å–å¾—
         index = selectedObj.GetComponent<Image>().sprite.name;
 
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
@@ -48,7 +48,7 @@ public class WorkRefer : MonoBehaviour
         detailHold.transform.position = new Vector3(95, 200, 0);
 
 
-        //qƒIƒuƒWƒFƒNƒg‚Ìæ“¾
+        //å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å–å¾—
         GameObject objday = detailHold.transform.GetChild(0).gameObject;
         objpict = detailHold.transform.GetChild(1).gameObject;
         GameObject objeye = detailHold.transform.GetChild(2).gameObject;
@@ -60,24 +60,24 @@ public class WorkRefer : MonoBehaviour
         ConveyInfo(btnindex, out string eye, out string hair, out string item, out string day);
 
         objday.GetComponent<Text>().text = day;
-        objeye.GetComponent<Text>().text = "–ÚF" + eye;
-        objhair.GetComponent<Text>().text = "”¯Œ^F" + hair;
-        objitem.GetComponent<Text>().text = "ƒAƒNƒZF" + item;
+        objeye.GetComponent<Text>().text = "ç›®ï¼š" + eye;
+        objhair.GetComponent<Text>().text = "é«ªå‹ï¼š" + hair;
+        objitem.GetComponent<Text>().text = "ã‚¢ã‚¯ã‚»ï¼š" + item;
         //objpict.GetComponent<Image>().sprite = PlayerPrefs.GetString("ImagePath");
 
         //StartCoroutine(GetImageFromPath(PlayerPrefs.GetString("ImagePath")));
 
-        /*‚à‚µ‰æ‘œ‚ªİ’è‚³‚ê‚Ä‚¢‚½‚çAŠÈ—ª‰æ–Ê‚É‚à‚»‚Ì‰æ‘œ‚ğ•\¦‚·‚é
+        /*ã‚‚ã—ç”»åƒãŒè¨­å®šã•ã‚Œã¦ã„ãŸã‚‰ã€ç°¡ç•¥ç”»é¢ã«ã‚‚ãã®ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹
         Image pctimg = objpict.GetComponent<Image>();
         if(pctimg.sprite != null)
         {
             btnImage = obj.gameObject.GetComponent<Image>();
-            btnImage.sprite = wwsp;  //ƒ‰ƒCƒuƒ‰ƒŠ‚©‚ç‰æ‘œ‚ğæ“¾‚µİ’è
+            btnImage.sprite = wwsp;  //ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‹ã‚‰ç”»åƒã‚’å–å¾—ã—è¨­å®š
         }*/
-        //objpict.GetComponent<Image>().sprite = pictImage[s];  //‰æ‘œ‚ğİ’è‚·‚é
+        //objpict.GetComponent<Image>().sprite = pictImage[s];  //ç”»åƒã‚’è¨­å®šã™ã‚‹
     }
 
-    //Ú×‰æ–Ê‚ÉƒLƒƒƒ‰ƒNƒ^[î•ñ‚ğ“`‚¦‚é
+    //è©³ç´°ç”»é¢ã«ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼æƒ…å ±ã‚’ä¼ãˆã‚‹
     public void ConveyInfo(int i, out string eye, out string hair, out string item , out string day)
     {
         string line = PlayerPrefs.GetString("WorkRefer" +i);
@@ -88,25 +88,25 @@ public class WorkRefer : MonoBehaviour
         day = lineinfo[3];
     }
 
-    //ƒvƒŒƒnƒu‚Ì–ß‚éƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    //ãƒ—ãƒ¬ãƒãƒ–ã®æˆ»ã‚‹ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ã
     public void PrefabOnClick()
     {
         Destroy(detailHold);
     }
 
-    /*ƒpƒX‚©‚ç‰æ‘œ‚ğæ“¾
+    /*ãƒ‘ã‚¹ã‹ã‚‰ç”»åƒã‚’å–å¾—
     IEnumerator GetImageFromPath(string path)
     {
         WWW www = new WWW(path);
         yield return www;
 
         Image pctimg = objpict.GetComponent<Image>();
-        //Texture2D‚ğSprite‚É•ÏŠ·
+        //Texture2Dã‚’Spriteã«å¤‰æ›
         var tex = www.textureNonReadable;
         wwsp = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
         pctimg.sprite = wwsp;
 
-        //ŠÈˆÕ‰æ–Ê‚É‚à‚»‚Ì‰æ‘œ‚ğ•\¦
+        //ç°¡æ˜“ç”»é¢ã«ã‚‚ãã®ç”»åƒã‚’è¡¨ç¤º
         Image btnimg = obj[btnindex].GetComponent<Image>();
         btnimg.sprite = wwsp;
     }*/

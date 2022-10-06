@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,32 +6,32 @@ public class PictGet : MonoBehaviour
 {
     void Update()
     {
-        // ƒ^ƒbƒ`‚ÉŒÄ‚Î‚ê‚é
+        // ã‚¿ãƒƒãƒæ™‚ã«å‘¼ã°ã‚Œã‚‹
         if (Input.GetMouseButtonDown(0))
         {
-            // ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ğƒMƒƒƒ‰ƒŠ[‚É•Û‘¶
+            // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ã‚®ãƒ£ãƒ©ãƒªãƒ¼ã«ä¿å­˜
             StartCoroutine(TakeScreenshotAndSave());
         }
     }
 
-    // ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ğƒMƒƒƒ‰ƒŠ[‚É•Û‘¶
+    // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ã‚®ãƒ£ãƒ©ãƒªãƒ¼ã«ä¿å­˜
     private IEnumerator TakeScreenshotAndSave()
     {
         yield return new WaitForEndOfFrame();
 
-        // ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚Ìæ“¾
+        // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã®å–å¾—
         Texture2D ss = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         ss.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
         ss.Apply();
 
-        // ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ğƒMƒƒƒ‰ƒŠ[‚É•Û‘¶
+        // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ã‚®ãƒ£ãƒ©ãƒªãƒ¼ã«ä¿å­˜
         NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(
             ss, "GalleryTest", "Image.png",
             (success, path) => Debug.Log("Media save result: " + success + " " + path)
         );
         Debug.Log("Permission result: " + permission);
 
-        // ƒƒ‚ƒŠƒŠ[ƒN‚Ì‰ñ”ğ
+        // ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯ã®å›é¿
         Destroy(ss);
     }
 }

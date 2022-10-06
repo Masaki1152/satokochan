@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ButtonReturn : MonoBehaviour
 {
-    //ƒ{ƒ^ƒ“‚ÅƒV[ƒ“‘JˆÚ
+    //ãƒœã‚¿ãƒ³ã§ã‚·ãƒ¼ãƒ³é·ç§»
         public void ButtonreturnClicked()
         {
             SceneManager.LoadScene("MainScene");

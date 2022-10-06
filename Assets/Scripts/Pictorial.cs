@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +13,12 @@ public class Pictorial : MonoBehaviour
     Sprite[] pictImage = new Sprite[162];
     Button[]obj = new Button[162];
     Image btnImage;
-    //Button btn;  //ƒvƒŒƒnƒu‚Ìƒ{ƒ^ƒ“
-    public GameObject detail;  //Ú×‰æ–Ê‚ÌƒvƒŒƒnƒu
+    //Button btn;  //ãƒ—ãƒ¬ãƒãƒ–ã®ãƒœã‚¿ãƒ³
+    public GameObject detail;  //è©³ç´°ç”»é¢ã®ãƒ—ãƒ¬ãƒãƒ–
     GameObject detailHold;
     public Transform parentTran;
     EventSystem eventSystem;
-    GameObject selectedObj;  //¡‘I‘ğ‚µ‚Ä‚¢‚éƒ{ƒ^ƒ“‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ‚èo‚·
+    GameObject selectedObj;  //ä»Šé¸æŠã—ã¦ã„ã‚‹ãƒœã‚¿ãƒ³ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–ã‚Šå‡ºã™
 
 
     private void Start()
@@ -36,40 +36,40 @@ public class Pictorial : MonoBehaviour
             obj[i] = Instantiate(button, contentRectTransform);
             int s = i + 1;
             obj[i].GetComponentInChildren<Text>().text = "No." + s.ToString();
-            obj[i].GetComponent<Button>().interactable = false;  //–¢Š‚ÌƒLƒƒƒ‰‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
+            obj[i].GetComponent<Button>().interactable = false;  //æœªæ‰€æŒã®ã‚­ãƒ£ãƒ©ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
             btnImage = obj[i].gameObject.GetComponent<Image>();
-            ChangeImage(i);    //Ê^‚ğ•Ï‚¦‚é
+            ChangeImage(i);    //å†™çœŸã‚’å¤‰ãˆã‚‹
             Button btn = obj[i].GetComponent<Button>();
             btn.onClick.AddListener(OnClickButton);
-            Debug.Log("Pictrial‚ÌChangeImage‚ÌŒã‚ÍA”z—ñ" + i + "‚Í" + PlayerPrefs.GetString("pictInfo" + i));
+            Debug.Log("Pictrialã®ChangeImageã®å¾Œã¯ã€é…åˆ—" + i + "ã¯" + PlayerPrefs.GetString("pictInfo" + i));
         }
 
     }
 
     public void ChangeImage(int i)
     {
-        //PlayerPrefs‚©‚çtrue/flase‚ğæ‚èo‚·
+        //PlayerPrefsã‹ã‚‰true/flaseã‚’å–ã‚Šå‡ºã™
         string s = PlayerPrefs.GetString("pictInfo" + i);
-        Debug.Log("Pictrial‚ÌChangeImage’†‚Í”z—ñ" + i + "‚Í" + s);
+        Debug.Log("Pictrialã®ChangeImageä¸­ã¯é…åˆ—" + i + "ã¯" + s);
 
-        //Š‚µ‚Ä‚¢‚½ê‡A‰æ‘œ‚ğ•ÏX‚·‚é
-        if (s == "true")      //Šù‚ÉŠ‚µ‚Ä‚¢‚½ê‡‚Ìˆ—
+        //æ‰€æŒã—ã¦ã„ãŸå ´åˆã€ç”»åƒã‚’å¤‰æ›´ã™ã‚‹
+        if (s == "true")      //æ—¢ã«æ‰€æŒã—ã¦ã„ãŸå ´åˆã®å‡¦ç†
         {
             Debug.Log(i + "is OK!," + ButtonFortune.pictInfo[i] + pictImage[i].name);
             btnImage.sprite = pictImage[i];
-            obj[i].GetComponent<Button>().interactable = true;  //–¢Š‚ÌƒLƒƒƒ‰‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚æ‚¤‚É‚·‚é
+            obj[i].GetComponent<Button>().interactable = true;  //æœªæ‰€æŒã®ã‚­ãƒ£ãƒ©ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹ã‚ˆã†ã«ã™ã‚‹
         }
 
-        PlayerPrefs.SetString("pictInfo" + i, s);  //“¯‚É•Û‘¶“à—e‚ğXV
+        PlayerPrefs.SetString("pictInfo" + i, s);  //åŒæ™‚ã«ä¿å­˜å†…å®¹ã‚’æ›´æ–°
         PlayerPrefs.Save();
     }
 
-    //ƒvƒŒƒnƒu‚Ìƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«‚Ìˆ—
+    //ãƒ—ãƒ¬ãƒãƒ–ã®ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ãã®å‡¦ç†
     public void OnClickButton()
     {
-        eventSystem = EventSystem.current;  //ƒCƒxƒ“ƒgƒVƒXƒeƒ€‚ğ—˜—p‚µ‚Ä‚Ç‚Ìƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ä‚¢‚é‚©‚ğæ“¾  
+        eventSystem = EventSystem.current;  //ã‚¤ãƒ™ãƒ³ãƒˆã‚·ã‚¹ãƒ†ãƒ ã‚’åˆ©ç”¨ã—ã¦ã©ã®ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ã¦ã„ã‚‹ã‹ã‚’å–å¾—  
         selectedObj = eventSystem.currentSelectedGameObject;
-        // ƒ{ƒ^ƒ“‚ÌImageƒRƒ“ƒ|[ƒlƒ“ƒg‚©‚çspriteƒf[ƒ^‚Ì–¼‘O‚ğæ“¾
+        // ãƒœã‚¿ãƒ³ã®Imageã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‹ã‚‰spriteãƒ‡ãƒ¼ã‚¿ã®åå‰ã‚’å–å¾—
         string index = selectedObj.GetComponent<Image>().sprite.name;
 
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
@@ -77,14 +77,14 @@ public class Pictorial : MonoBehaviour
         detailHold.transform.localScale = new Vector3(1.2f, 1.2f, 1);
         detailHold.transform.position = new Vector3(82, 170, 0);
 
-        //ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ä‚¢‚éÅ’†‚Í‘¼‚Ìƒ{ƒ^ƒ“‚Í‰Ÿ‚¹‚È‚¢
+        //ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ã¦ã„ã‚‹æœ€ä¸­ã¯ä»–ã®ãƒœã‚¿ãƒ³ã¯æŠ¼ã›ãªã„
         for(int i = 0; i<162;i++)
         {
             obj[i].GetComponent<Button>().interactable = false;
         }
 
 
-        //qƒIƒuƒWƒFƒNƒg‚Ìæ“¾
+        //å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å–å¾—
         GameObject objname = detailHold.transform.GetChild(2).gameObject;
         GameObject objstar = detailHold.transform.GetChild(1).gameObject;
         GameObject objcomment = detailHold.transform.GetChild(3).gameObject;
@@ -104,47 +104,47 @@ public class Pictorial : MonoBehaviour
         objimage.GetComponent<Image>().sprite = pictImage[s];
     }
 
-    //Ú×‰æ–Ê‚ÉƒLƒƒƒ‰ƒNƒ^[î•ñ‚ğ“`‚¦‚é
+    //è©³ç´°ç”»é¢ã«ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼æƒ…å ±ã‚’ä¼ãˆã‚‹
     public void ConveyInfo(int i, out string name, out string star, out string comment)
     {
         string line = ButtonFortune.character[i];
         string[] lineinfo = line.Split(',');
         name = lineinfo[1];
-        int s = int.Parse(lineinfo[0]);  //¯‚Ì”‚ğ®”‰»
+        int s = int.Parse(lineinfo[0]);  //æ˜Ÿã®æ•°ã‚’æ•´æ•°åŒ–
         star = starStar(s);
         comment = lineinfo[2];
     }
 
-    //™‚ğ•\¦‚·‚é‚½‚ß‚Ìƒƒ\ƒbƒh
+    //â˜†ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰
     public string starStar(int num)
     {
         string star = null;
         switch (num)
         {
             case 1:
-                star = "š™™™™";
+                star = "â˜…â˜†â˜†â˜†â˜†";
                 break;
             case 2:
-                star = "šš™™™";
+                star = "â˜…â˜…â˜†â˜†â˜†";
                 break;
             case 3:
-                star = "ššš™™";
+                star = "â˜…â˜…â˜…â˜†â˜†";
                 break;
             case 4:
-                star = "šššš™";
+                star = "â˜…â˜…â˜…â˜…â˜†";
                 break;
             case 5:
-                star = "ššššš";
+                star = "â˜…â˜…â˜…â˜…â˜…";
                 break;
         }
         return star;
     }
 
-    //ƒvƒŒƒnƒu‚Ì–ß‚éƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+    //ãƒ—ãƒ¬ãƒãƒ–ã®æˆ»ã‚‹ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã¨ã
     public void PrefabOnClick()
     {
         Destroy(detailHold);
-        //Ú×‰æ–Ê‚ğÁ‚µ‚½Œã‚Í‘¼‚Ìƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é
+        //è©³ç´°ç”»é¢ã‚’æ¶ˆã—ãŸå¾Œã¯ä»–ã®ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹
         for (int i = 0; i < 162; i++)
         {
             if (PlayerPrefs.GetString("pictInfo" + i) == "true")

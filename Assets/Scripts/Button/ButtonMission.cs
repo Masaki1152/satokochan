@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,13 +8,13 @@ using Random = System.Random;
 public class ButtonMission : MonoBehaviour
 {
     DateTime day;
-    string[] eyes = { "ƒm[ƒ}ƒ‹", "‚Â‚è–Ú", "‚½‚ê–Ú", "‚Æ‚ë–Ú", "‚¶‚Æ–Ú" };
-    string[] longhair = { "ƒƒ“ƒO^ƒXƒgƒŒ[ƒg", "ƒƒ“ƒO^ƒp[ƒ}", "ƒƒ“ƒO^ƒƒ“ƒŒƒ“", "ƒƒ“ƒO^cƒ[ƒ‹", "ƒƒ“ƒO^•PƒJƒbƒg" };
-    string[] semilonghair = { "ƒZƒ~ƒƒ“ƒO^ƒXƒgƒŒ[ƒg" };
-    string[] medium = { "ƒ~ƒfƒBƒAƒ€^ƒp[ƒ}", "ƒ~ƒfƒBƒAƒ€^ƒJ[ƒŠ[" };
-    string[] shorthair = { "ƒVƒ‡[ƒg^ƒXƒgƒŒ[ƒg", "ƒVƒ‡[ƒg^ƒp[ƒ}", "ƒVƒ‡[ƒg^ƒ{ƒu", "ƒVƒ‡[ƒg^ƒ}ƒbƒVƒ…ƒ{ƒu", "ƒVƒ‡[ƒg^ƒEƒ‹ƒtƒJƒbƒg", "ƒVƒ‡[ƒg^ƒxƒŠ[ƒVƒ‡[ƒg" };
-    string[] elsehair = { "‚¨‚³‚°", "ƒ|ƒj[ƒe[ƒ‹", "ƒƒ“ƒTƒCƒhƒAƒbƒv", "ƒn[ƒtƒAƒbƒv", "ƒTƒCƒhƒe[ƒ‹", "ƒcƒCƒ“ƒe[ƒ‹", "ƒVƒjƒˆƒ“", "ƒcƒCƒXƒgƒeƒBƒAƒ‰" };
-    string[] addItem = { "ƒwƒAƒSƒ€", "ƒwƒAƒsƒ“", "ƒVƒ…ƒVƒ…", "ƒwƒAƒoƒ“ƒh", "ƒoƒŒƒbƒ^", "ƒŠƒ{ƒ“" };
+    string[] eyes = { "ãƒãƒ¼ãƒãƒ«", "ã¤ã‚Šç›®", "ãŸã‚Œç›®", "ã¨ã‚ç›®", "ã˜ã¨ç›®" };
+    string[] longhair = { "ãƒ­ãƒ³ã‚°ï¼ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ", "ãƒ­ãƒ³ã‚°ï¼ãƒ‘ãƒ¼ãƒ", "ãƒ­ãƒ³ã‚°ï¼ãƒ¯ãƒ³ãƒ¬ãƒ³", "ãƒ­ãƒ³ã‚°ï¼ç¸¦ãƒ­ãƒ¼ãƒ«", "ãƒ­ãƒ³ã‚°ï¼å§«ã‚«ãƒƒãƒˆ" };
+    string[] semilonghair = { "ã‚»ãƒŸãƒ­ãƒ³ã‚°ï¼ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ" };
+    string[] medium = { "ãƒŸãƒ‡ã‚£ã‚¢ãƒ ï¼ãƒ‘ãƒ¼ãƒ", "ãƒŸãƒ‡ã‚£ã‚¢ãƒ ï¼ã‚«ãƒ¼ãƒªãƒ¼" };
+    string[] shorthair = { "ã‚·ãƒ§ãƒ¼ãƒˆï¼ã‚¹ãƒˆãƒ¬ãƒ¼ãƒˆ", "ã‚·ãƒ§ãƒ¼ãƒˆï¼ãƒ‘ãƒ¼ãƒ", "ã‚·ãƒ§ãƒ¼ãƒˆï¼ãƒœãƒ–", "ã‚·ãƒ§ãƒ¼ãƒˆï¼ãƒãƒƒã‚·ãƒ¥ãƒœãƒ–", "ã‚·ãƒ§ãƒ¼ãƒˆï¼ã‚¦ãƒ«ãƒ•ã‚«ãƒƒãƒˆ", "ã‚·ãƒ§ãƒ¼ãƒˆï¼ãƒ™ãƒªãƒ¼ã‚·ãƒ§ãƒ¼ãƒˆ" };
+    string[] elsehair = { "ãŠã•ã’", "ãƒãƒ‹ãƒ¼ãƒ†ãƒ¼ãƒ«", "ãƒ¯ãƒ³ã‚µã‚¤ãƒ‰ã‚¢ãƒƒãƒ—", "ãƒãƒ¼ãƒ•ã‚¢ãƒƒãƒ—", "ã‚µã‚¤ãƒ‰ãƒ†ãƒ¼ãƒ«", "ãƒ„ã‚¤ãƒ³ãƒ†ãƒ¼ãƒ«", "ã‚·ãƒ‹ãƒ¨ãƒ³", "ãƒ„ã‚¤ã‚¹ãƒˆãƒ†ã‚£ã‚¢ãƒ©" };
+    string[] addItem = { "ãƒ˜ã‚¢ã‚´ãƒ ", "ãƒ˜ã‚¢ãƒ”ãƒ³", "ã‚·ãƒ¥ã‚·ãƒ¥", "ãƒ˜ã‚¢ãƒãƒ³ãƒ‰", "ãƒãƒ¬ãƒƒã‚¿", "ãƒªãƒœãƒ³" };
     string eyeTheme;
     string hairTheme;
     string addItemTheme;
@@ -26,14 +26,14 @@ public class ButtonMission : MonoBehaviour
     public GameObject obj;
     Vector3 position;
     Vector3 eulerAngles;
-    string latestButtonClick;    // ÅV‚Ì“ú•t
-    string textline;   //ƒeƒNƒXƒg‚Ì•Û‘¶—p
-    public Button btnM; //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-    public Button btnF; //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-    public Button btnW; //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-    public Button btnP; //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
+    string latestButtonClick;    // æœ€æ–°ã®æ—¥ä»˜
+    string textline;   //ãƒ†ã‚¯ã‚¹ãƒˆã®ä¿å­˜ç”¨
+    public Button btnM; //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+    public Button btnF; //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+    public Button btnW; //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+    public Button btnP; //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
 
-    public static List<string> WorkStr;  //ì•i‚Ì”‚ğƒŠƒXƒg‚Å•\¦B}ŠÓ‚Æˆá‚¢A’Ç‰Á‚µ‚Ä‚¢‚­‚à‚Ì‚Ì‚½‚ßB
+    public static List<string> WorkStr;  //ä½œå“ã®æ•°ã‚’ãƒªã‚¹ãƒˆã§è¡¨ç¤ºã€‚å›³é‘‘ã¨é•ã„ã€è¿½åŠ ã—ã¦ã„ãã‚‚ã®ã®ãŸã‚ã€‚
 
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class ButtonMission : MonoBehaviour
         theme = GameObject.FindGameObjectWithTag("Comment").GetComponent<Text>();
         commentPanel.SetActive(false);
         WorkStr = new List<string>();
-        day = DateTime.Now;   //¡“ú‚Ì“ú•t‚ğæ“¾
+        day = DateTime.Now;   //ä»Šæ—¥ã®æ—¥ä»˜ã‚’å–å¾—
     }
 
     // Update is called once per frame
@@ -54,57 +54,57 @@ public class ButtonMission : MonoBehaviour
         
     }
 
-    //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Ìˆ—
+    //ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸæ™‚ã®å‡¦ç†
     public void ButtonClicked()
     {
-        //‚P“ú‚É‚P‰ñ‚µ‚©‰Ÿ‚¹‚È‚¢ˆ—
+        //ï¼‘æ—¥ã«ï¼‘å›ã—ã‹æŠ¼ã›ãªã„å‡¦ç†
         //if(isClicked()==false)
         //{
-            btnM.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnF.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnW.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnP.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
+            btnM.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnF.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnW.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnP.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
 
             SatokoAction();
-            commentShow();  //ƒRƒƒ“ƒgƒpƒlƒ‹‚ğ•\¦‚·‚é
+            commentShow();  //ã‚³ãƒ¡ãƒ³ãƒˆãƒ‘ãƒãƒ«ã‚’è¡¨ç¤ºã™ã‚‹
             theme.text = null;
 
             Debug.Log("first");
 
-            int eyeNum = r.Next(0,5);  //–Ú‚Ìƒe[ƒ}‚ÌŒˆ’è
+            int eyeNum = r.Next(0,5);  //ç›®ã®ãƒ†ãƒ¼ãƒã®æ±ºå®š
             eyeTheme = eyes[eyeNum];
-            int hairNum = r.Next(0,5);  //”¯‚Ìƒe[ƒ}‚ÌŒˆ’è
+            int hairNum = r.Next(0,5);  //é«ªã®ãƒ†ãƒ¼ãƒã®æ±ºå®š
             hairTheme = todayHair(hairNum);
             int itemNum = r.Next(0,6);
             addItemTheme = addItem[itemNum];
-            //ƒeƒLƒXƒg‚Ö‚Ì‘‚«‚İ
-            textline = "¡“ú‚Ìƒe[ƒ}‚Í...\n–Ú‚Í<color=#008000>" + eyeTheme + "</color>A”¯Œ^‚Í<color=#0000ff>" + hairTheme + "</color>‚ÅAƒwƒAƒAƒNƒZƒTƒŠ[‚Í<color=#ff4500>" + addItemTheme + "</color>‚ÌƒLƒƒƒ‰ƒNƒ^[‚Å‚·‚íI\n‰Âˆ¤‚­‚¨•`‚«‚ ‚»‚Î‚¹™";
+            //ãƒ†ã‚­ã‚¹ãƒˆã¸ã®æ›¸ãè¾¼ã¿
+            textline = "ä»Šæ—¥ã®ãƒ†ãƒ¼ãƒã¯...\nç›®ã¯<color=#008000>" + eyeTheme + "</color>ã€é«ªå‹ã¯<color=#0000ff>" + hairTheme + "</color>ã§ã€ãƒ˜ã‚¢ã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼ã¯<color=#ff4500>" + addItemTheme + "</color>ã®ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã§ã™ã‚ï¼\nå¯æ„›ããŠæãã‚ãã°ã›â˜†";
 
             StartCoroutine(Communication(textline));
 
-            //‰ß‹‚Ìƒe[ƒ}‚ÉŠi”[‚·‚é‚½‚ß‚É—v‘f‚ğƒŠƒXƒg‚É’Ç‰Á
+            //éå»ã®ãƒ†ãƒ¼ãƒã«æ ¼ç´ã™ã‚‹ãŸã‚ã«è¦ç´ ã‚’ãƒªã‚¹ãƒˆã«è¿½åŠ 
             string ws = eyeTheme + "," + hairTheme + "," + addItemTheme + "," + day.ToString("yyyy/MM/dd");
             WorkStr.Add(ws);
             int hold = WorkStr.Count - 1;
             PlayerPrefs.SetString("WorkRefer" + hold, ws);
             Debug.Log("ws=" + ws);
          //}
-        /*else  //Šù‚É‰Ÿ‚µ‚Ä‚¢‚½‚ç
+        /*else  //æ—¢ã«æŠ¼ã—ã¦ã„ãŸã‚‰
         {
-            btnM.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnF.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnW.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
-            btnP.interactable = false;  //ˆ—’†‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚­‚·‚é
+            btnM.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnF.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnW.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
+            btnP.interactable = false;  //å‡¦ç†ä¸­ã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªãã™ã‚‹
 
             SatokoAction();
-            commentShow();  //ƒRƒƒ“ƒgƒpƒlƒ‹‚ğ•\¦‚·‚é
+            commentShow();  //ã‚³ãƒ¡ãƒ³ãƒˆãƒ‘ãƒãƒ«ã‚’è¡¨ç¤ºã™ã‚‹
             StartCoroutine(Communication(textline));
 
             Debug.Log("second");
         }*/
     }
 
-    //ˆê•¶š‚¸‚Â•\¦‚·‚éƒƒ\ƒbƒh
+    //ä¸€æ–‡å­—ãšã¤è¡¨ç¤ºã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
     IEnumerator Communication(string line)
     {
         texts = line.ToCharArray();
@@ -112,7 +112,7 @@ public class ButtonMission : MonoBehaviour
         string preserve = null;
         int num = 0;
 
-        //<color>‚È‚Ç‚ğƒeƒLƒXƒg‚É•\¦‚³‚¹‚È‚¢‚½‚ß‚É‘JˆÚ‚ğ—˜—p
+        //<color>ãªã©ã‚’ãƒ†ã‚­ã‚¹ãƒˆã«è¡¨ç¤ºã•ã›ãªã„ãŸã‚ã«é·ç§»ã‚’åˆ©ç”¨
         for (int i = 0; i < texts.Length; i++)
         {
             switch(flag)
@@ -194,29 +194,29 @@ public class ButtonMission : MonoBehaviour
 
         yield return new WaitForSeconds(10.0f);
         theme.text = "";
-        commentPanel.SetActive(false);    //‰ï˜bŒã‚ÉƒRƒƒ“ƒgƒpƒlƒ‹‚ğÁ‚·
+        commentPanel.SetActive(false);    //ä¼šè©±å¾Œã«ã‚³ãƒ¡ãƒ³ãƒˆãƒ‘ãƒãƒ«ã‚’æ¶ˆã™
         latestButtonClick = DateTimeString(System.DateTime.Now);
-        btnM.interactable = true;  //ˆ—Œã‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é
-        btnF.interactable = true;  //ˆ—Œã‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é
-        btnW.interactable = true;  //ˆ—Œã‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é
-        btnP.interactable = true;  //ˆ—Œã‚Íƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é
+        btnM.interactable = true;  //å‡¦ç†å¾Œã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹
+        btnF.interactable = true;  //å‡¦ç†å¾Œã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹
+        btnW.interactable = true;  //å‡¦ç†å¾Œã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹
+        btnP.interactable = true;  //å‡¦ç†å¾Œã¯ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ã‚‹
     }
 
-    public string todayHair(int num)   //”¯‚Ì’·‚³‚²‚Æ‚ÉÚ×‚Èî•ñ‚ğ•\¦‚·‚é‚½‚ß‚Ìƒƒ\ƒbƒh
+    public string todayHair(int num)   //é«ªã®é•·ã•ã”ã¨ã«è©³ç´°ãªæƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰
     {
         string hair = null;
         int randNum;
 
         switch (num)
         {
-            case 0:  //ƒƒ“ƒO‚Ì
+            case 0:  //ãƒ­ãƒ³ã‚°ã®æ™‚
                 randNum = r.Next(0, 5);
                 hair = longhair[randNum];
                 break;
-            case 1:  //ƒZƒ~ƒƒ“ƒO‚Ì
+            case 1:  //ã‚»ãƒŸãƒ­ãƒ³ã‚°ã®æ™‚
                 hair = semilonghair[0];
                 break;
-            case 2:  //ƒ~ƒfƒBƒAƒ€‚Ì
+            case 2:  //ãƒŸãƒ‡ã‚£ã‚¢ãƒ ã®æ™‚
                 randNum = r.Next(0, 2);
                 hair = medium[randNum];
                 break;
@@ -237,7 +237,7 @@ public class ButtonMission : MonoBehaviour
         commentPanel.SetActive(true);
     }
 
-    //ˆÈ‰ºƒAƒjƒ[ƒVƒ‡ƒ“İ’è
+    //ä»¥ä¸‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³è¨­å®š
     public void SatokoAction()
     {
         
@@ -302,15 +302,15 @@ public class ButtonMission : MonoBehaviour
         animator.SetBool("Yubisashi", false);
     }
 
-    //‚P“ú‚É‚P‰ñ‚µ‚©ƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚È‚¢‚æ‚¤‚É‚·‚é
-    //–{“úƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚©‚ğ•Ô‚·
+    //ï¼‘æ—¥ã«ï¼‘å›ã—ã‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã›ãªã„ã‚ˆã†ã«ã™ã‚‹
+    //æœ¬æ—¥ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã‹ã‚’è¿”ã™
     public bool isClicked()
     {
         string today = DateTimeString(System.DateTime.Now);
 
         Debug.Log(today);
         Debug.Log(latestButtonClick);
-        //‰‚ß‚Ä‚È‚çfalse,‚Q‰ñ–ÚˆÈ~‚È‚çtrue
+        //åˆã‚ã¦ãªã‚‰false,ï¼’å›ç›®ä»¥é™ãªã‚‰true
         if (today == latestButtonClick)
         {
             return true;
@@ -322,7 +322,7 @@ public class ButtonMission : MonoBehaviour
     }
 
     
-    //DateTime•Ï”‚ğYYYY/MM/DDŒ`®‚Å•Ô‚·
+    //DateTimeå¤‰æ•°ã‚’YYYY/MM/DDå½¢å¼ã§è¿”ã™
     public string DateTimeString(DateTime date)
     {
         return date.Year.ToString() + "/" + date.Month.ToString() + "/" + date.Day.ToString();

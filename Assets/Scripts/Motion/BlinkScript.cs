@@ -1,41 +1,41 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BlinkScript : MonoBehaviour
 {
-    //ƒAƒjƒ[ƒVƒ‡ƒ“‚ğæ“¾
+    //ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å–å¾—
     public Animator animator;
 
-    //ŠÔ‚ğŒv‘ª‚·‚é‚½‚ß‚Ì•Ï”
+    //æ™‚é–“ã‚’è¨ˆæ¸¬ã™ã‚‹ãŸã‚ã®å¤‰æ•°
     public float countTime = 0.0f;
-    //‚Ü‚Î‚½‚«‚Ì”­“®ƒ^ƒCƒ~ƒ“ƒO‚Ì•Ï”
+    //ã¾ã°ãŸãã®ç™ºå‹•ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã®å¤‰æ•°
     public float blinkTriggerTime = 5.0f;
 
     void FixedUpdate()
     {
-        //FixedUpdate‚Í‰Šúİ’è‚Ì‚Ü‚Ü‚È‚ç
-        //0.02•bŠÔŠu‚Å‚­‚è•Ô‚µŒÄ‚Î‚ê‚é
+        //FixedUpdateã¯åˆæœŸè¨­å®šã®ã¾ã¾ãªã‚‰
+        //0.02ç§’é–“éš”ã§ãã‚Šè¿”ã—å‘¼ã°ã‚Œã‚‹
         CheckCountTime();
     }
 
     void CheckCountTime()
     {
-        //ŠÔ‚ğŒv‘ª
+        //æ™‚é–“ã‚’è¨ˆæ¸¬
         countTime += Time.deltaTime;
-        //ŠÔ‚ª‚Ü‚Î‚½‚«‚Ì”­“®ƒ^ƒCƒ~ƒ“ƒO‚ğ’´‚¦‚½‚ç
+        //æ™‚é–“ãŒã¾ã°ãŸãã®ç™ºå‹•ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’è¶…ãˆãŸã‚‰
         if (countTime > blinkTriggerTime)
         {
-            //Œv‘ªŠÔ‚ğƒŠƒZƒbƒg
+            //è¨ˆæ¸¬æ™‚é–“ã‚’ãƒªã‚»ãƒƒãƒˆ
             countTime = 0.0f;
-            //‚Ü‚Î‚½‚«‚Ì”­“®ƒ^ƒCƒ~ƒ“ƒO‚Ì•Ï”‚É
-            //5.0f‚©‚ç10.5f‚ÌŠÔ‚Åƒ‰ƒ“ƒ_ƒ€‚È”’l‚ğæ“¾
+            //ã¾ã°ãŸãã®ç™ºå‹•ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã®å¤‰æ•°ã«
+            //5.0fã‹ã‚‰10.5fã®é–“ã§ãƒ©ãƒ³ãƒ€ãƒ ãªæ•°å€¤ã‚’å–å¾—
             blinkTriggerTime = Random.Range(5.0f, 10.5f);
 
-            //–Ú‚ğ•Â‚¶‚éˆ—
+            //ç›®ã‚’é–‰ã˜ã‚‹å‡¦ç†
             animator.SetBool("Blink", true);
 
-            //–Ú‚ğ•Â‚¶‚éˆ—ŠJn
+            //ç›®ã‚’é–‰ã˜ã‚‹å‡¦ç†é–‹å§‹
             StartCoroutine("OpenEye");
         }
     }

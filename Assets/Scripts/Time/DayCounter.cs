@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,11 +25,11 @@ public class DayCounter : MonoBehaviour
     {
         Today = DateTime.Now;
 
-        //ŠJn“ú‚Ìæ“¾
+        //é–‹å§‹æ—¥ã®å–å¾—
         string datetimeString = PlayerPrefs.GetString("StartDay");
         startDay = System.DateTime.FromBinary(System.Convert.ToInt64(datetimeString));
 
         dayCount = (Today - startDay).Days;
-        day.text = dayCount + 1 + "“ú–Ú";
+        day.text = dayCount + 1 + "æ—¥ç›®";
     }
 }
