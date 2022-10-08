@@ -18,7 +18,7 @@ public class WorkRefer : MonoBehaviour
     GameObject selectedObj;  //今選択しているボタンのインデックスを取り出す
     string index; //何番目のボタンか
     GameObject objpict; //画像取得用
-    Sprite wwsp;
+    
 
     private void Start()
     {
@@ -32,6 +32,8 @@ public class WorkRefer : MonoBehaviour
             btnImage.sprite.name = i.ToString();   
             Button btn = obj.GetComponent<Button>();
             btn.onClick.AddListener(OnClickButton);
+            //ボタンにAddImageスクリプトを追加する
+            obj.gameObject.AddComponent<AddImage>();
         }
     }
 
@@ -45,7 +47,7 @@ public class WorkRefer : MonoBehaviour
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
         detailHold.transform.SetParent(parentTran);
         detailHold.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-        detailHold.transform.position = new Vector3(95, 200, 0);
+        detailHold.transform.position = new Vector3(120, 240, 0);
 
 
         //子オブジェクトの取得
@@ -65,7 +67,7 @@ public class WorkRefer : MonoBehaviour
         objitem.GetComponent<Text>().text = "アクセ：" + item;
         //objpict.GetComponent<Image>().sprite = PlayerPrefs.GetString("ImagePath");
 
-        //StartCoroutine(GetImageFromPath(PlayerPrefs.GetString("ImagePath")));
+        //StartCoroutine(GetImageFromPath(PlayerPrefs.GetString("URL" + btnImage)));
 
         /*もし画像が設定されていたら、簡略画面にもその画像を表示する
         Image pctimg = objpict.GetComponent<Image>();
@@ -94,7 +96,7 @@ public class WorkRefer : MonoBehaviour
         Destroy(detailHold);
     }
 
-    /*パスから画像を取得
+    /*//パスから画像を取得
     IEnumerator GetImageFromPath(string path)
     {
         WWW www = new WWW(path);
@@ -107,7 +109,7 @@ public class WorkRefer : MonoBehaviour
         pctimg.sprite = wwsp;
 
         //簡易画面にもその画像を表示
-        Image btnimg = obj[btnindex].GetComponent<Image>();
+        Image btnimg = obj.GetComponent<Image>();
         btnimg.sprite = wwsp;
     }*/
 }

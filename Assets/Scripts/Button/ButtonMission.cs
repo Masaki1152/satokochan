@@ -58,8 +58,8 @@ public class ButtonMission : MonoBehaviour
     public void ButtonClicked()
     {
         //１日に１回しか押せない処理
-        //if(isClicked()==false)
-        //{
+        if(isClicked()==false)
+        {
             btnM.interactable = false;  //処理中はボタンを押せなくする
             btnF.interactable = false;  //処理中はボタンを押せなくする
             btnW.interactable = false;  //処理中はボタンを押せなくする
@@ -88,8 +88,8 @@ public class ButtonMission : MonoBehaviour
             int hold = WorkStr.Count - 1;
             PlayerPrefs.SetString("WorkRefer" + hold, ws);
             Debug.Log("ws=" + ws);
-         //}
-        /*else  //既に押していたら
+         }
+         else  //既に押していたら
         {
             btnM.interactable = false;  //処理中はボタンを押せなくする
             btnF.interactable = false;  //処理中はボタンを押せなくする
@@ -101,7 +101,7 @@ public class ButtonMission : MonoBehaviour
             StartCoroutine(Communication(textline));
 
             Debug.Log("second");
-        }*/
+        }
     }
 
     //一文字ずつ表示するメソッド
