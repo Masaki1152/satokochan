@@ -33,18 +33,25 @@ public class ButtonMission : MonoBehaviour
     public Button btnW; //処理中はボタンを押せなくする
     public Button btnP; //処理中はボタンを押せなくする
 
-    public static List<string> WorkStr;  //作品の数をリストで表示。図鑑と違い、追加していくもののため。
+    public static List<string> WorkStr; //= new List<string>();  //作品の数をリストで表示。図鑑と違い、追加していくもののため。
+    public static int WorkStrNum; //リストの要素数。保存しやすいように独立させておく。
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.SetInt("WorkNum", 0); //初期化用
         position =  obj.transform.position;
         eulerAngles =  obj.transform.eulerAngles;
         r = new Random();
         theme = GameObject.FindGameObjectWithTag("Comment").GetComponent<Text>();
         commentPanel.SetActive(false);
         WorkStr = new List<string>();
+        //リストの初期化を防ぐ
+        for (int i=0;i< PlayerPrefs.GetInt("WorkNum",0); i++)
+        {
+            WorkStr.Add(PlayerPrefs.GetString("WorkRefer" +i));
+        }
         day = DateTime.Now;   //今日の日付を取得
     }
 
@@ -87,9 +94,11 @@ public class ButtonMission : MonoBehaviour
             WorkStr.Add(ws);
             int hold = WorkStr.Count - 1;
             PlayerPrefs.SetString("WorkRefer" + hold, ws);
-            Debug.Log("ws=" + ws);
+            PlayerPrefs.SetInt("WorkNum", hold + 1);
+            PlayerPrefs.Save();
+            Debug.Log("wsの番号は" + hold +", ws=" + ws + ",保存したものは" + PlayerPrefs.GetString("WorkRefer" + hold)); //確認用
          }
-         else  //既に押していたら
+        else  //既に押していたら
         {
             btnM.interactable = false;  //処理中はボタンを押せなくする
             btnF.interactable = false;  //処理中はボタンを押せなくする

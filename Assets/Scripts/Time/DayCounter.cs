@@ -8,14 +8,19 @@ public class DayCounter : MonoBehaviour
 {
     DateTime startDay;
     DateTime Today;
-    int dayCount;
+    double dayCount;
     Text day;
+    DateTime dateFrom;
+    DateTime dateTo;
 
     // Start is called before the first frame update
     void Start()
     {
         startDay = DateTime.Now;
-        PlayerPrefs.SetString("StartDay", startDay.ToBinary().ToString());
+        string y = startDay.Year.ToString();
+        string m = startDay.Month.ToString();
+        string d = startDay.Day.ToString();
+        PlayerPrefs.SetString("StartDay", y + "," + m + "," +d);
         PlayerPrefs.Save();
         day = GameObject.FindGameObjectWithTag("Day").GetComponent<Text>();
     }
@@ -27,9 +32,16 @@ public class DayCounter : MonoBehaviour
 
         //開始日の取得
         string datetimeString = PlayerPrefs.GetString("StartDay");
-        startDay = System.DateTime.FromBinary(System.Convert.ToInt64(datetimeString));
+        string[] ymd = datetimeString.Split(',');
+        dateFrom = new System.DateTime(int.Parse(ymd[0]), int.Parse(ymd[1]), int.Parse(ymd[2]));
 
-        dayCount = (Today - startDay).Days;
+        //本日の取得
+        string y = Today.Year.ToString();
+        string m = Today.Month.ToString();
+        string d = Today.Day.ToString();
+        dateTo = new System.DateTime(int.Parse(y), int.Parse(m), int.Parse(d));
+
+        dayCount = (dateTo - dateFrom).TotalDays;
         day.text = dayCount + 1 + "日目";
     }
 }
