@@ -47,7 +47,7 @@ public class WorkRefer : MonoBehaviour
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
         detailHold.transform.SetParent(parentTran);
         detailHold.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-        detailHold.transform.position = new Vector3(120, 240, 0);
+        detailHold.transform.position = new Vector3(190, 400, 0);
 
 
         //子オブジェクトの取得
