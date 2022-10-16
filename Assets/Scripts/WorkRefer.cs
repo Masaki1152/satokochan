@@ -81,8 +81,39 @@ public class WorkRefer : MonoBehaviour
         index = selectedObj.name;
         Debug.Log("詳細画面名は" + index);
 
+<<<<<<< HEAD
+        detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
+        detailHold.transform.SetParent(parentTran);
+        detailHold.transform.localScale = new Vector3(0.75f, 0.75f, 1);
+        detailHold.transform.position = new Vector3(190, 400, 0);
+
+
+        //子オブジェクトの取得
+        GameObject objday = detailHold.transform.GetChild(0).gameObject;
+        objpict = detailHold.transform.GetChild(1).gameObject;
+        GameObject objeye = detailHold.transform.GetChild(2).gameObject;
+        GameObject objhair = detailHold.transform.GetChild(3).gameObject;
+        GameObject objitem = detailHold.transform.GetChild(4).gameObject;
+        
+
+        int btnindex = int.Parse(index);
+        ConveyInfo(btnindex, out string eye, out string hair, out string item, out string day);
+
+        objday.GetComponent<Text>().text = day;
+        objeye.GetComponent<Text>().text = "目：" + eye;
+        objhair.GetComponent<Text>().text = "髪型：" + hair;
+        objitem.GetComponent<Text>().text = "アクセ：" + item;
+        //objpict.GetComponent<Image>().sprite = PlayerPrefs.GetString("ImagePath");
+
+        //StartCoroutine(GetImageFromPath(PlayerPrefs.GetString("URL" + btnImage)));
+
+        /*もし画像が設定されていたら、簡略画面にもその画像を表示する
+        Image pctimg = objpict.GetComponent<Image>();
+        if(pctimg.sprite != null)
+=======
         //既に詳細画面を生成していれば画面外のものを画面内に持ってきて、していなければ新しく生成する。
         if (GameObject.Find("detailHold" + index) == null)
+>>>>>>> 470400f6b2371a3242b3159950af8c95faf03e75
         {
             detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
             detailHold.name = "detailHold" + index;
