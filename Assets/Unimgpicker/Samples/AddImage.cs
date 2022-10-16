@@ -3,13 +3,15 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+
 
 public class AddImage : MonoBehaviour
 {
     [SerializeField] private Unimgpicker imagePicker;
     [SerializeField] private Image ssImage;
     public Texture2D texture;
-    public Sprite texture2;
+    public static Sprite texture2;
 
     private void Awake()
     {
@@ -36,6 +38,15 @@ public class AddImage : MonoBehaviour
         yield return www;
 
         texture = www.texture;
+
+
+        //テクスチャをコピー
+        //TextureCopy(texture, path);
+        //PlayerPrefs.SetString("URL" + WorkRefer.btnindex, path);
+        //PlayerPrefs.Save();
+        //Debug.Log("番号確認" + WorkRefer.btnindex + "、URLは" + PlayerPrefs.GetString("URL" + WorkRefer.btnindex));
+
+
         // まずリサイズ
         int _CompressRate = TextureCompressionRate.TextureCompressionRatio(texture.width, texture.height);
         TextureScale.Bilinear(texture, texture.width / _CompressRate, texture.height / _CompressRate);
@@ -44,6 +55,31 @@ public class AddImage : MonoBehaviour
         // Spriteに変換して使用する
         texture2 = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
         output.overrideSprite = texture2;
+    }
+
+    public static Texture2D TextureCopy(Texture source, string savePath)
+    {
+        var texture = new Texture2D(source.width, source.height, TextureFormat.RGB24, false);
+        var renderTexture = new RenderTexture(texture.width, texture.height, 32);
+
+        // もとのテクスチャをRenderTextureにコピー
+        Graphics.Blit(source, renderTexture);
+        RenderTexture.active = renderTexture;
+
+        // RenderTexture.activeの内容をtextureに書き込み
+        texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+        RenderTexture.active = null;
+
+        // 不要になったので削除
+        RenderTexture.DestroyImmediate(renderTexture);
+
+        // pngとして保存
+        System.IO.File.WriteAllBytes(savePath, texture.EncodeToPNG());
+
+        AssetDatabase.Refresh();
+
+        // 保存したものをロードしてから返す
+        return AssetDatabase.LoadAssetAtPath<Texture2D>(savePath);
     }
 }
 
@@ -68,3 +104,4 @@ public static class TextureCompressionRate
         else return 1;
     }
 }
+

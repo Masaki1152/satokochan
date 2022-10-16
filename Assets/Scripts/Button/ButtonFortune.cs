@@ -170,7 +170,18 @@ public class ButtonFortune : MonoBehaviour
                             "1,るん,おでこを見せる髪型が吉ですわね。,158",
                             "2,トオル,金属バットを振り回す…圭一さんかしら？,159",
                             "3,ナギ,眼鏡をはずすと美人…萌えますわね。,160",
-                            "4,ユー子,スタイルの良さに料理上手…憧れますわね。,161"
+                            "4,ユー子,スタイルの良さに料理上手…憧れますわね。,161",
+                            "1,花小泉杏,何事も考え方ひとつで楽しめますわよ。,162",
+                            "2,雲雀丘瑠璃,ラッキーアイテムは工事現場の看板…らしいですわ。,163",
+                            "1,久米川牡丹,日ごろから体力をつけておく必要がありますわ。,164",
+                            "3,萩生響,進む方向を間違えないよう気を付けてくださいまし。,165",
+                            "4,江古田蓮,しっかりと睡眠をとると吉ですわね！,166",
+                            "1,千矢,千矢さんはレディーなのに野生児すぎますわよね。,167",
+                            "2,紺,紺さんは色んなコスプレが似合うお方ですわよね。,168",
+                            "3,小梅,ラッキーアイテムは魔女のほうきですわよ！,169",
+                            "1,ノノ,社交性を意識してみると吉ですわよ！,170",
+                            "1,ニナ,こういう先生って憧れますわよね。,171",
+                            "1,佐久,佐久隊長、いつも見廻りお疲れ様ですわ！,172"
                          };
     List<string>star1;
     List<string>star2;
@@ -203,21 +214,21 @@ public class ButtonFortune : MonoBehaviour
         eulerAngles =  obj.transform.eulerAngles;
 
         //所持しているかどうかの判定をする配列
-        pictInfo = new string[162];
-        for (int i = 0; i < 162; i++)
+        pictInfo = new string[173];
+        for (int i = 0; i < 173; i++)
         {
             pictInfo[i] = PlayerPrefs.GetString("pictInfo" + i,"false");   //未所持であればfalse、初期化
         }
 
         //一旦すべて保存
-        for (int i = 0; i < 162; i++)
+        for (int i = 0; i < 173; i++)
         {
             PlayerPrefs.SetString("pictInfo" + i, pictInfo[i]);
             PlayerPrefs.Save();
         }
         
         //一旦すべて保存されているかを確認
-        for (int i = 0; i < 162; i++)
+        for (int i = 0; i < 173; i++)
         {
             Debug.Log("配列の中身" + i + "は" + PlayerPrefs.GetString("pictInfo" + i));
         }
