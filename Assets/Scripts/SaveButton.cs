@@ -1,8 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO; //ƒtƒ@ƒCƒ‹•Û‘¶—p
+using System.IO; //ãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜ç”¨
 
 public class SaveButton : MonoBehaviour
 {
@@ -19,37 +19,37 @@ public class SaveButton : MonoBehaviour
     }
 
     
-    //w•Û‘¶ƒ{ƒ^ƒ“x‚ğƒ^ƒbƒv‚µ‚½‚çÀs
+    //ã€ä¿å­˜ãƒœã‚¿ãƒ³ã€ã‚’ã‚¿ãƒƒãƒ—ã—ãŸã‚‰å®Ÿè¡Œ
     public void PushSaveImage()
     {
-        Debug.Log("‰Û‘è‚ğ•Û‘¶‚µ‚Ü‚µ‚½");
+        Debug.Log("èª²é¡Œã‚’ä¿å­˜ã—ã¾ã—ãŸ");
         
-        //‰æ‘œƒtƒ@ƒCƒ‹–¼‚Ég‚¤•Ï”
+        //ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åã«ä½¿ã†å¤‰æ•°
         int i = int.Parse(WorkRefer.saveName);
         string path = "Assets/Resources/MyWork";
 
-        //“Ç‚İ‚ñ‚¾‰æ‘œ‚ğpng‚É•ÏŠ·
+        //èª­ã¿è¾¼ã‚“ã ç”»åƒã‚’pngã«å¤‰æ›
         byte[] bytes = AddImage.texture2.texture.EncodeToPNG();
 
-        //d•¡‚µ‚È‚¢‰æ‘œƒtƒ@ƒCƒ‹–¼‚ğ’T‚·
+        //é‡è¤‡ã—ãªã„ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åã‚’æ¢ã™
         /*while (File.Exists(path + "/work" + i + ".png"))
         {
             i++;
         }*/
-        //(d•¡‚µ‚È‚¢ƒtƒ@ƒCƒ‹–¼‚ğŒ©‚Â‚¯‚½‚ç)•Û‘¶
+        //(é‡è¤‡ã—ãªã„ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¦‹ã¤ã‘ãŸã‚‰)ä¿å­˜
         File.WriteAllBytes(path + "/work" + i + ".png", bytes);
 
-        //‰æ‘œ•ÏX‚ğs‚Á‚½‚½‚ßA‰æ‘œ•ÏX‚ğtrue‚É‚·‚é
-        PlayerPrefs.SetString("imgInfo" + i, "true");  //“¯‚É•Û‘¶“à—e‚ğXV
+        //ç”»åƒå¤‰æ›´ã‚’è¡Œã£ãŸãŸã‚ã€ç”»åƒå¤‰æ›´ã‚’trueã«ã™ã‚‹
+        PlayerPrefs.SetString("imgInfo" + i, "true");  //åŒæ™‚ã«ä¿å­˜å†…å®¹ã‚’æ›´æ–°
         PlayerPrefs.Save();
 
-        //Ú×‰æ–Ê‚Ì‰æ‘œ‚à•Ï‰»‚³‚¹‚é
+        //è©³ç´°ç”»é¢ã®ç”»åƒã‚‚å¤‰åŒ–ã•ã›ã‚‹
         GameObject dh = GameObject.Find("detailHold" + i);
         GameObject dhpict = dh.transform.GetChild(2).gameObject;
         Image dhimg = dhpict.gameObject.GetComponent<Image>();
         dhimg.color = new Color(255, 255, 255, 255);
 
-        //ŠÈˆÕ‰æ–Ê‚Ì‰æ‘œ‚à•Ï‰»‚³‚¹‚é
+        //ç°¡æ˜“ç”»é¢ã®ç”»åƒã‚‚å¤‰åŒ–ã•ã›ã‚‹
         //GameObject butimg = GameObject.Find(i);
         //Image bimg = butimg.gameObject.GetComponent<Image>();
     }
