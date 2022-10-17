@@ -21,11 +21,11 @@ public class TimeNow : MonoBehaviour
         var hour = DateTime.Now.Hour;
         if (hour < 10)
         {
-            ClockText.text = "0" + DateTime.Now.ToLongTimeString();
+            ClockText.text = "0" + DateTime.Now.ToShortTimeString();
         }
         else
         {
-            ClockText.text = DateTime.Now.ToLongTimeString();
+            ClockText.text = DateTime.Now.ToShortTimeString();
         }
     }
 }
