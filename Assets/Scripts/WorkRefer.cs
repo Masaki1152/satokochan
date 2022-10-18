@@ -11,14 +11,13 @@ public class WorkRefer : MonoBehaviour
 {
     public RectTransform contentRectTransform;
     public Button workbutton;
-    Button[]obj = new Button[ButtonMission.WorkStr.Count];
+    Button[] obj = new Button[ButtonMission.WorkStr.Count];
     public GameObject detail;  //詳細画面のプレハブ
     GameObject detailHold;
     public Transform parentTran;
     EventSystem eventSystem;
     GameObject selectedObj;  //今選択しているボタンのインデックスを取り出す
-    string index; //何番目のボタンか
-    //GameObject objpict; //画像取得用
+    string index; //何番目のボタン
     public static int btnindex; //ボタンのインデックスを格納
     public static string saveName; //保存ボタンの名前
     GameObject objsave; //詳細画面の保存ボタンのインスタンス格納
@@ -81,14 +80,14 @@ public class WorkRefer : MonoBehaviour
         index = selectedObj.name;
         Debug.Log("詳細画面名は" + index);
 
-        //既に詳細画面を生成していれば画面外のものをもってきて、していなければ新しく生成する。
+        //既に詳細画面を生成していれば画面外のものを持ってきて、していなければ新しく生成する。
         if (GameObject.Find("detailHold" + index) == null)
         {
             detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
             detailHold.name = "detailHold" + index;
             detailHold.transform.SetParent(parentTran);
             detailHold.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-            detailHold.transform.position = new Vector3(120, 260, 0);
+            detailHold.transform.position = new Vector3(530, 1000, 0);
 
 
             //子オブジェクトの取得
@@ -103,7 +102,6 @@ public class WorkRefer : MonoBehaviour
             //ボタンを透明にする
             Image dhimg = butpict.gameObject.GetComponent<Image>();
             dhimg.color = new Color(255, 255, 255, 0);
-
 
             int btnindex = int.Parse(index);
             ConveyInfo(btnindex, out string eye, out string hair, out string item, out string day);
@@ -146,7 +144,7 @@ public class WorkRefer : MonoBehaviour
             GameObject dlClone = GameObject.Find("detailHold" + index);
             dlClone.transform.SetParent(parentTran);
             dlClone.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-            dlClone.transform.position = new Vector3(120, 260, 0);
+            dlClone.transform.position = new Vector3(530, 1000, 0);
 
             GameObject dlpict = dlClone.transform.GetChild(1).gameObject;
             Image pctimg = dlpict.GetComponent<Image>();
@@ -174,9 +172,9 @@ public class WorkRefer : MonoBehaviour
     }
 
     //詳細画面にキャラクター情報を伝える
-    public void ConveyInfo(int i, out string eye, out string hair, out string item , out string day)
+    public void ConveyInfo(int i, out string eye, out string hair, out string item, out string day)
     {
-        string line = PlayerPrefs.GetString("WorkRefer" +i);
+        string line = PlayerPrefs.GetString("WorkRefer" + i);
         string[] lineinfo = line.Split(',');
         eye = lineinfo[0];
         hair = lineinfo[1];
@@ -189,7 +187,7 @@ public class WorkRefer : MonoBehaviour
     {
         //destroyを使うとAddImageが使えないエラーが出るため、画面外に移動させてdestroyを使わない。
         GameObject dlClone = GameObject.Find("detailHold" + index);
-        dlClone.transform.position += new Vector3(-600.0f, 0.0f, 0.0f);
+        dlClone.transform.position += new Vector3(-1200.0f, 0.0f, 0.0f);
         //詳細画面を閉じると、他のボタンを押せるようにする
         for (int i = 0; i < workNum; i++)
         {
@@ -215,11 +213,14 @@ public class WorkRefer : MonoBehaviour
     //png画像をスプライトに変換する
     public void pngtoSprite(int i)
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         path = Directory.GetFiles(@"Assets/Resources/MyWork", "*.png");
-        #elif !UNITY_EDITOR && UNITY_IOS //iOSのみ
+        Debug.Log("パスはエディター用が使われています。");
+#elif  !UNITY_EDITOR && UNITY_IOS
+        //iOSのみ
         path = Directory.GetFiles(UnityEngine.Application.persistentDataPath, "*.png");
-        #endif
+        Debug.Log("パスはiOS用が使われています。");
+#endif
 
         if (i < path.Length)
         {
@@ -230,16 +231,26 @@ public class WorkRefer : MonoBehaviour
             Texture2D texture = new Texture2D(2, 2);
             texture.LoadImage(bytes);
 
+            Debug.Log("スプライト変換1　ここまでは実行できました。");
+
             //spriteに変換
             Rect rect = new Rect(0f, 0f, texture.width, texture.height);
             Sprite sprite = Sprite.Create(texture, rect, Vector2.zero);
 
+            Debug.Log("スプライト変換2　ここまでは実行できました。");
+
             //spriteを格納
             saveImage[i] = sprite;
+
+            Debug.Log("スプライト変換3　ここまでは実行できました。");
         }
         else
         {
+            Debug.Log("スプライト変換4　ここまでは実行できました。");
+
             saveImage[i] = defaultimg;
+
+            Debug.Log("スプライト変換5　ここまでは実行できました。");
         }
     }
 }

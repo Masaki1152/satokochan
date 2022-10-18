@@ -97,7 +97,10 @@ public class ButtonMission : MonoBehaviour
             PlayerPrefs.SetInt("WorkNum", hold + 1);
             PlayerPrefs.Save();
             Debug.Log("wsの番号は" + hold +", ws=" + ws + ",保存したものは" + PlayerPrefs.GetString("WorkRefer" + hold)); //確認用
-         }
+            //今日のテーマを保存
+            PlayerPrefs.SetString("TodayMissionText", textline);
+            PlayerPrefs.Save();
+        }
         else  //既に押していたら
         {
             btnM.interactable = false;  //処理中はボタンを押せなくする
@@ -107,7 +110,8 @@ public class ButtonMission : MonoBehaviour
 
             SatokoAction();
             commentShow();  //コメントパネルを表示する
-            StartCoroutine(Communication(textline));
+            StartCoroutine(Communication(PlayerPrefs.GetString("TodayMissionText")));
+            Debug.Log("今日のミッションテキストは" + PlayerPrefs.GetString("TodayMissionText"));
 
             Debug.Log("second");
         }
@@ -205,6 +209,8 @@ public class ButtonMission : MonoBehaviour
         theme.text = "";
         commentPanel.SetActive(false);    //会話後にコメントパネルを消す
         latestButtonClick = DateTimeString(System.DateTime.Now);
+        PlayerPrefs.SetString("LatestMButtonClick", latestButtonClick);  //１回目を終えたため
+        PlayerPrefs.Save();
         btnM.interactable = true;  //処理後はボタンを押せる
         btnF.interactable = true;  //処理後はボタンを押せる
         btnW.interactable = true;  //処理後はボタンを押せる
@@ -332,7 +338,7 @@ public class ButtonMission : MonoBehaviour
         Debug.Log(today);
         Debug.Log(latestButtonClick);
         //初めてならfalse,２回目以降ならtrue
-        if (today == latestButtonClick)
+        if (today == PlayerPrefs.GetString("LatestMButtonClick"))
         {
             return true;
         }

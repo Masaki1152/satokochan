@@ -76,7 +76,7 @@ public class Pictorial : MonoBehaviour
         detailHold = Instantiate(detail, new Vector3(150, 200, 0), Quaternion.identity);
         detailHold.transform.SetParent(parentTran);
         detailHold.transform.localScale = new Vector3(1.2f, 1.2f, 1);
-        detailHold.transform.position = new Vector3(120, 260, 0);
+        detailHold.transform.position = new Vector3(530, 1000, 0);
 
 
         //ボタンを押している最中は他のボタンは押せない
