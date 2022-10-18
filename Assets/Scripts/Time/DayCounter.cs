@@ -17,11 +17,13 @@ public class DayCounter : MonoBehaviour
     void Start()
     {
         startDay = DateTime.Now;
-        string y = startDay.Year.ToString();
+        /*string y = startDay.Year.ToString();
         string m = startDay.Month.ToString();
-        string d = startDay.Day.ToString();
-        PlayerPrefs.SetString("StartDay", y + "," + m + "," +d);
+        string d = startDay.Day.ToString();*/
+
+        PlayerPrefs.SetString("StartDay", 2022 + "," + 10 + "," + 17);
         PlayerPrefs.Save();
+        Debug.Log("初めの日は" + PlayerPrefs.GetString("StartDay"));
         day = GameObject.FindGameObjectWithTag("Day").GetComponent<Text>();
     }
 
