@@ -469,7 +469,7 @@ public class ButtonFortune : MonoBehaviour
     {
         
         Random r = new Random();
-        int rnd = r.Next(1, 6);
+        int rnd = r.Next(1, 7);
         switch (rnd)
         {
             case 1:
@@ -481,16 +481,20 @@ public class ButtonFortune : MonoBehaviour
                 StartCoroutine("IEKizoku");
                 break;
             case 3:
-                animator.SetBool("Koshiate", true);
-                StartCoroutine("IEKoshiate");
-                break;
-            case 4:
                 animator.SetBool("Poster", true);
                 StartCoroutine("IEPoster");
                 break;
-            case 5:
+            case 4:
                 animator.SetBool("Yubisashi", true);
                 StartCoroutine("IEYubisashi");
+                break;
+            case 5:
+                animator.SetBool("Zoi", true);
+                StartCoroutine("IEZoi");
+                break;
+            case 6:
+                animator.SetBool("Figure", true);
+                StartCoroutine("IEFigure");
                 break;
         }
 
@@ -509,12 +513,6 @@ public class ButtonFortune : MonoBehaviour
         animator.SetBool("Kizoku", false);
     }
 
-    IEnumerator IEKoshiate()
-    {
-        yield return new WaitForSeconds(15.0f);
-        animator.SetBool("Koshiate", false);
-    }
-
     IEnumerator IEPoster()
     {
         yield return new WaitForSeconds(15.0f);
@@ -527,6 +525,20 @@ public class ButtonFortune : MonoBehaviour
     {
         yield return new WaitForSeconds(15.0f);
         animator.SetBool("Yubisashi", false);
+    }
+
+    IEnumerator IEZoi()
+    {
+        yield return new WaitForSeconds(15.0f);
+        animator.SetBool("Zoi", false);
+    }
+
+    IEnumerator IEFigure()
+    {
+        yield return new WaitForSeconds(15.0f);
+        animator.SetBool("Figure", false);
+        obj.transform.eulerAngles = eulerAngles;
+        obj.transform.position = position;
     }
 
     //１日に１回しかボタンを押せないようにする
