@@ -33,7 +33,7 @@ public class ButtonMission : MonoBehaviour
     public Button btnW; //処理中はボタンを押せなくする
     public Button btnP; //処理中はボタンを押せなくする
 
-    public static List<string> WorkStr; //= new List<string>();  //作品の数をリストで表示。図鑑と違い、追加していくもののため。
+    public static List<string> WorkStr;  //作品の数をリストで表示。図鑑と違い、追加していくもののため。
     public static int WorkStrNum; //リストの要素数。保存しやすいように独立させておく。
 
 
@@ -257,7 +257,7 @@ public class ButtonMission : MonoBehaviour
     {
         
         Random r = new Random();
-        int rnd = r.Next(1, 7);
+        int rnd = r.Next(1, 8);
         switch (rnd)
         {
             case 1:
@@ -284,9 +284,13 @@ public class ButtonMission : MonoBehaviour
                 animator.SetBool("Figure", true);
                 StartCoroutine("IEFigure");
                 break;
+            case 7:
+                animator.SetBool("Koshiate", true);
+                StartCoroutine("IEKoshiate");
+                break;
         }
 
-        Debug.Log("Yes," + rnd);
+        Debug.Log("アニメーション番号は、" + rnd);
     }
 
     IEnumerator IEHead_Lean()
@@ -327,6 +331,12 @@ public class ButtonMission : MonoBehaviour
         animator.SetBool("Figure", false);
         obj.transform.eulerAngles = eulerAngles;
         obj.transform.position = position;
+    }
+
+    IEnumerator IEKoshiate()
+    {
+        yield return new WaitForSeconds(15.0f);
+        animator.SetBool("Koshiate", false);
     }
 
     //１日に１回しかボタンを押せないようにする

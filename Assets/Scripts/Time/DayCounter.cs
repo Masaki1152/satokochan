@@ -6,6 +6,7 @@ using System;
 
 public class DayCounter : MonoBehaviour
 {
+    string dayCheck = "true";   //開始日の取得を最初だけ行うための確認
     DateTime startDay;
     DateTime Today;
     double dayCount;
@@ -16,14 +17,22 @@ public class DayCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startDay = DateTime.Now;
-        /*string y = startDay.Year.ToString();
-        string m = startDay.Month.ToString();
-        string d = startDay.Day.ToString();*/
-
-        PlayerPrefs.SetString("StartDay", 2022 + "," + 10 + "," + 17);
-        PlayerPrefs.Save();
-        Debug.Log("初めの日は" + PlayerPrefs.GetString("StartDay"));
+        //trueなら1回目のため開始日を取得して保存
+        if (dayCheck == "true")
+        {
+            startDay = DateTime.Now;
+            string y = startDay.Year.ToString();
+            string m = startDay.Month.ToString();
+            string d = startDay.Day.ToString();
+            PlayerPrefs.SetString("StartDay", y + "," + m + "," + d);
+            PlayerPrefs.Save();
+            Debug.Log("初めの日は" + PlayerPrefs.GetString("StartDay"));
+            dayCheck = "false";  //2回目以降は開始日の取得を行わない
+        }
+        else
+        {
+            Debug.Log("初めの日は" + PlayerPrefs.GetString("StartDay"));
+        }
         day = GameObject.FindGameObjectWithTag("Day").GetComponent<Text>();
     }
 
@@ -43,6 +52,7 @@ public class DayCounter : MonoBehaviour
         string d = Today.Day.ToString();
         dateTo = new System.DateTime(int.Parse(y), int.Parse(m), int.Parse(d));
 
+        //ログイン日数を計算
         dayCount = (dateTo - dateFrom).TotalDays;
         day.text = dayCount + 1 + "日目";
     }

@@ -231,26 +231,26 @@ public class WorkRefer : MonoBehaviour
             Texture2D texture = new Texture2D(2, 2);
             texture.LoadImage(bytes);
 
-            Debug.Log("スプライト変換1　ここまでは実行できました。");
+            //Debug.Log("スプライト変換1　ここまでは実行できました。");
 
             //spriteに変換
             Rect rect = new Rect(0f, 0f, texture.width, texture.height);
             Sprite sprite = Sprite.Create(texture, rect, Vector2.zero);
 
-            Debug.Log("スプライト変換2　ここまでは実行できました。");
+            //Debug.Log("スプライト変換2　ここまでは実行できました。");
 
             //spriteを格納
             saveImage[i] = sprite;
 
-            Debug.Log("スプライト変換3　ここまでは実行できました。");
+            //Debug.Log("スプライト変換3　ここまでは実行できました。");
         }
         else
         {
-            Debug.Log("スプライト変換4　ここまでは実行できました。");
+            //Debug.Log("スプライト変換4　ここまでは実行できました。");
 
             saveImage[i] = defaultimg;
 
-            Debug.Log("スプライト変換5　ここまでは実行できました。");
+            //Debug.Log("スプライト変換5　ここまでは実行できました。");
         }
     }
 }

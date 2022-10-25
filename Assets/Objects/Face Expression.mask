@@ -8,4 +8,336 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: Face Expression
   m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: body
+    m_Weight: 1
+  - m_Path: cloths
+    m_Weight: 1
+  - m_Path: eri
+    m_Weight: 1
+  - m_Path: eye
+    m_Weight: 1
+  - m_Path: face
+    m_Weight: 1
+  - m_Path: hair.back
+    m_Weight: 1
+  - m_Path: hair.front
+    m_Weight: 1
+  - m_Path: hair.side
+    m_Weight: 1
+  - m_Path: "NURBS\u30D1\u30B9"
+    m_Weight: 1
+  - m_Path: redeye
+    m_Weight: 1
+  - m_Path: tie
+    m_Weight: 1
+  - m_Path: wig
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_L/shin_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_L/shin_L/foot_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_L/shin_L/foot_L/toe_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_R/shin_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_R/shin_R/foot_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/hip/thigh_R/shin_R/foot_R/toe_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.back"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.back/body.006"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.back/body.006/body.007"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.back/body.006/body.007/body.027"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.front"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.front/body.003"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.front/body.003/body.004"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.front/body.003/body.004/body.026"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.30"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.30/body.035"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.30/body.035/body.036"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.30/body.035/body.036/body.037"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.60"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.60/body.018"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.60/body.018/body.019"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.60/body.018/body.019/body.031"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.90"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.90/body.010"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.90/body.010/body.011"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.90/body.010/body.011/body.028"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.120"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.120/body.015"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.120/body.015/body.016"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.120/body.015/body.016/body.030"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.150"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.150/body.043"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.150/body.043/body.044"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.L.150/body.043/body.044/body.045"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.30"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.30/body.039"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.30/body.039/body.040"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.30/body.039/body.040/body.041"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.60"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.60/body.021"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.60/body.021/body.022"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.60/body.021/body.022/body.032"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.90"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.90/body.012"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.90/body.012/body.013"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.90/body.012/body.013/body.029"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.120"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.120/body.024"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.120/body.024/body.025"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.120/body.024/body.025/body.033"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.150"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.150/body.047"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.150/body.047/body.048"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/skert.R.150/body.047/body.048/body.049"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/eri01"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/eri01/eri02"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/eri01/eri02/eri02.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01/backhair02"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.001/backhair02.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.002"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.002/backhair02.002"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.003"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.003/backhair02.003"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.004"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.004/backhair02.004"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.005"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.005/backhair02.005"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.006"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.006/backhair02.006"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.007"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.007/backhair02.007"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.008"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/backhair01.008/backhair02.008"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/eye_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/eye_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/fronthair01"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/fronthair01/fronthair02"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/fronthair01/fronthair02/fronthair02.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/head.002"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/head.002/head.003"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/head.004"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/head.004/head.005"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_L/pas02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_L/pas02_L/pas02_L.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_R/pas02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas01_R/pas02_R/pas02_R.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_L/pas04_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_L/pas04_L/pas04_L.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_R/pas04_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/pas03_R/pas04_R/pas04_R.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_L/sidehair02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_L/sidehair02_L/sidehair02_L.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_L/sidehair02_L/sidehair02_L.001/sidehair02_L.002"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_R/sidehair02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_R/sidehair02_R/sidehair02_R.001"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/neck/head/sidehair01_R/sidehair02_R/sidehair02_R.001/sidehair02_R.002"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_index01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_index01_L/f_index02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_index01_L/f_index02_L/f_index03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_middle01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_middle01_L/f_middle02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_middle01_L/f_middle02_L/f_middle03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_pinky01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_pinky01_L/f_pinky02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_pinky01_L/f_pinky02_L/f_pinky03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_ring01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_ring01_L/f_ring02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/f_ring01_L/f_ring02_L/f_ring03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/thumb01_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/thumb01_L/thumb02_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L/thumb01_L/thumb02_L/thumb03_L"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_index01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_index01_R/f_index02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_index01_R/f_index02_R/f_index03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_middle01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_middle01_R/f_middle02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_middle01_R/f_middle02_R/f_middle03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_pinky01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_pinky01_R/f_pinky02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_pinky01_R/f_pinky02_R/f_pinky03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_ring01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_ring01_R/f_ring02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/f_ring01_R/f_ring02_R/f_ring03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/thumb01_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/thumb01_R/thumb02_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/thumb01_R/thumb02_R/thumb03_R"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/tie01"
+    m_Weight: 1
+  - m_Path: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2/body 1/spine/chest/tie01/tie02"
+    m_Weight: 1
