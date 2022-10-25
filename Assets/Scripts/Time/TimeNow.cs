@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimeNow : MonoBehaviour
 {
 
-    private Text ClockText;
+    Text ClockText;
 
     // Use this for initialization
     void Start()
@@ -18,8 +18,10 @@ public class TimeNow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var hour = DateTime.Now.Hour;
-        if (hour < 10)
+        string hour = DateTime.Now.Hour.ToString();
+        int nowHour = int.Parse(hour);
+        //0埋めを行う
+        if (nowHour < 10)
         {
             ClockText.text = "0" + DateTime.Now.ToShortTimeString();
         }

@@ -467,9 +467,9 @@ public class ButtonFortune : MonoBehaviour
     //以下アニメーション設定
     public void SatokoAction()
     {
-        
+
         Random r = new Random();
-        int rnd = r.Next(1, 7);
+        int rnd = r.Next(1, 8);
         switch (rnd)
         {
             case 1:
@@ -496,9 +496,13 @@ public class ButtonFortune : MonoBehaviour
                 animator.SetBool("Figure", true);
                 StartCoroutine("IEFigure");
                 break;
+            case 7:
+                animator.SetBool("Koshiate", true);
+                StartCoroutine("IEKoshiate");
+                break;
         }
 
-        Debug.Log("Yes," + rnd);
+        Debug.Log("アニメーション番号は、" + rnd);
     }
 
     IEnumerator IEHead_Lean()
@@ -541,6 +545,12 @@ public class ButtonFortune : MonoBehaviour
         obj.transform.position = position;
     }
 
+    IEnumerator IEKoshiate()
+    {
+        yield return new WaitForSeconds(15.0f);
+        animator.SetBool("Koshiate", false);
+    }
+
     //１日に１回しかボタンを押せないようにする
     //本日ボタンを押したかを返す
     public bool isClicked()
@@ -579,16 +589,5 @@ public class ButtonFortune : MonoBehaviour
             Debug.Log("FortuneのChangeBoolの後は" + PlayerPrefs.GetString("pictInfo" + i));
         }
     }
-
-    /*pictInfo配列を保存する
-    public void SaveBool()
-    {
-        for (int i = 0; i < 162; i++)
-        {
-            PlayerPrefs.SetString("pictInfo" + i, pictInfo[i]);
-            PlayerPrefs.Save();
-        }
-    }*/
-
 
 }

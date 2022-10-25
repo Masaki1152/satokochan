@@ -41,7 +41,7 @@ public class Pictorial : MonoBehaviour
             ChangeImage(i);    //写真を変える
             Button btn = obj[i].GetComponent<Button>();
             btn.onClick.AddListener(OnClickButton);
-            Debug.Log("PictrialのChangeImageの後は、配列" + i + "は" + PlayerPrefs.GetString("pictInfo" + i));
+            //Debug.Log("PictrialのChangeImageの後は、配列" + i + "は" + PlayerPrefs.GetString("pictInfo" + i));
         }
 
     }
@@ -50,7 +50,7 @@ public class Pictorial : MonoBehaviour
     {
         //PlayerPrefsからtrue/flaseを取り出す
         string s = PlayerPrefs.GetString("pictInfo" + i);
-        Debug.Log("PictrialのChangeImage中は配列" + i + "は" + s);
+        //Debug.Log("PictrialのChangeImage中は配列" + i + "は" + s);
 
         //所持していた場合、画像を変更する
         if (s == "true")      //既に所持していた場合の処理
@@ -91,7 +91,7 @@ public class Pictorial : MonoBehaviour
         GameObject objcomment = detailHold.transform.GetChild(3).gameObject;
         GameObject objimage = detailHold.transform.GetChild(0).gameObject;
 
-        int s = int.Parse(index);// int.Parse(this.gameObject.GetComponent<Image>().sprite.name);
+        int s = int.Parse(index);
 
         Debug.Log("s=" + s);
 
