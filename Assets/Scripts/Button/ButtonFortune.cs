@@ -181,7 +181,11 @@ public class ButtonFortune : MonoBehaviour
                             "3,小梅,ラッキーアイテムは魔女のほうきですわよ！,169",
                             "1,ノノ,社交性を意識してみると吉ですわよ！,170",
                             "1,ニナ,こういう先生って憧れますわよね。,171",
-                            "1,佐久,佐久隊長、いつも見廻りお疲れ様ですわ！,172"
+                            "1,佐久,佐久隊長、いつも見廻りお疲れ様ですわ！,172",
+                            "4,セイバー,凛々しい騎士様、憧れますわよね。,173",
+                            "2,遠坂凛,凛さん、本当にかっこいい女性ですわよね。,174",
+                            "5,イリヤ,イリヤさんとは親友になれそうな気がしますわ。,175",
+                            "1,間桐桜,ライダーさんとの絡み、もっと見たいですわね。,176"
                          };
     List<string>star1;
     List<string>star2;
@@ -214,21 +218,21 @@ public class ButtonFortune : MonoBehaviour
         eulerAngles =  obj.transform.eulerAngles;
 
         //所持しているかどうかの判定をする配列
-        pictInfo = new string[173];
-        for (int i = 0; i < 173; i++)
+        pictInfo = new string[177];
+        for (int i = 0; i < 177; i++)
         {
             pictInfo[i] = PlayerPrefs.GetString("pictInfo" + i,"false");   //未所持であればfalse、初期化
         }
 
         //一旦すべて保存
-        for (int i = 0; i < 173; i++)
+        for (int i = 0; i < 177; i++)
         {
             PlayerPrefs.SetString("pictInfo" + i, pictInfo[i]);
             PlayerPrefs.Save();
         }
         
         //一旦すべて保存されているかを確認
-        for (int i = 0; i < 173; i++)
+        for (int i = 0; i < 177; i++)
         {
             Debug.Log("配列の中身" + i + "は" + PlayerPrefs.GetString("pictInfo" + i));
         }
