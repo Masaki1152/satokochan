@@ -10,8 +10,8 @@ public class Pictorial : MonoBehaviour
     public RectTransform contentRectTransform;
     public RectTransform contentRectTransform2;
     public Button button;
-    Sprite[] pictImage = new Sprite[177];
-    Button[]obj = new Button[177];
+    Sprite[] pictImage = new Sprite[211];
+    Button[]obj = new Button[211];
     Image btnImage;
     public GameObject detail;  //詳細画面のプレハブ
     GameObject detailHold;
@@ -22,7 +22,7 @@ public class Pictorial : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 177; i++)
+        for (int i = 0; i < 211; i++)
         {
             pictImage[i] = Resources.Load<Sprite>("Images/" + i);
         }
@@ -30,7 +30,7 @@ public class Pictorial : MonoBehaviour
         Debug.Log("ButtonFortune =" + ButtonFortune.pictInfo.Length);
 
 
-        for (int i = 0; i < 177; i++)
+        for (int i = 0; i < 211; i++)
         {
             obj[i] = Instantiate(button, contentRectTransform);
             int s = i + 1;
@@ -80,7 +80,7 @@ public class Pictorial : MonoBehaviour
 
 
         //ボタンを押している最中は他のボタンは押せない
-        for(int i = 0; i<173;i++)
+        for(int i = 0; i<211;i++)
         {
             obj[i].GetComponent<Button>().interactable = false;
         }
@@ -147,7 +147,7 @@ public class Pictorial : MonoBehaviour
     {
         Destroy(detailHold);
         //詳細画面を消した後は他のボタンを押せる
-        for (int i = 0; i < 177; i++)
+        for (int i = 0; i < 211; i++)
         {
             if (PlayerPrefs.GetString("pictInfo" + i) == "true")
             {
